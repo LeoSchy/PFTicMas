@@ -1,6 +1,10 @@
 package com.example.pfticmas
 
 import android.os.Bundle
+import android.preference.EditTextPreference
+import android.view.View
+import android.widget.EditText
+import android.widget.TextView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -12,6 +16,10 @@ import com.example.pfticmas.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+    lateinit var textInput1: EditText
+    lateinit var textInput2: EditText
+    lateinit var textOutput: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,5 +36,28 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+//        textInput1 = findViewById(R.id.textInput1)
+//        textInput2 = findViewById(R.id.textInput1)
     }
+
+    fun buttonClick(view: View?) {
+        if(textInput1 == textInput2) {
+            textOutput.setText("Los textos son iguales")
+        }
+    }
+    override fun onStart() {
+        super.onStart()
+    }
+
+    override fun onResume() {
+        super.onResume()
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+    }
+
+
+
 }
